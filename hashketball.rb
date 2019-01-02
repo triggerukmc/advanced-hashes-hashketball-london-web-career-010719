@@ -86,20 +86,7 @@ def big_shoe_rebound
   end
 end
 
-def big_shoe_rebounds
-  biggest_rebounds = 0
-  shoe_size = 0
-all_player_stats.each do |player_stats|
-  if player_stats[:shoe] > shoe_size
-    shoe_size = player_stats[:shoe]
-    biggest_rebounds = player_stats[:rebounds]
-  end
-  end
-  biggest_rebounds
-  binding.pry
-end
 
-big_shoe_rebounds
  
 def all_player_stats
   player_stats=[]
@@ -115,5 +102,19 @@ def all_player_stats
   player_stats
 end
 
+def big_shoe_rebounds
+  biggest_rebounds = 0
+  shoe_size = 0
+all_player_stats.each do |player_stats|
+  if player_stats[:shoe] > shoe_size
+    shoe_size = player_stats[:shoe]
+    biggest_rebounds = player_stats[:rebounds]
+  end
+  end
+  biggest_rebounds
+  binding.pry
+end
+
+big_shoe_rebounds
 
 
