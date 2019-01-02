@@ -87,23 +87,30 @@ def big_shoe_rebound
 end
 
 def big_shoe_rebounds
-  shoe_name = ""
+  biggest_rebounds = 0
   shoe_size = 0
+all_player_stats.each do |player_stats|
+  if player_stats[:shoe] > shoe_size
+    shoe_size = player_stats[:shoe]
+    biggest_rebounds = player_stats[:rebounds]
+  end
+  end
+  biggest_rebounds
+end
+ 
+def all_player_stats
+  player_stats=[]
   game_hash.each do |attribute, data|
     data.each do |key, value|
       if key == :players
         value.each do |player, stats|
-          if stats[:shoe] > shoe_size
-            shoe_size = stats[:shoe]
-            shoe_name = player
-          end
-        end
-      end
+      player_stats << stats
+    end
     end
   end
-  return player_stats(shoe_name)[:rebounds]
+  end
+  player_stats
 end
- 
 
 
 
