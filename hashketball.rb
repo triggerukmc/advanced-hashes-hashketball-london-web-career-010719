@@ -112,9 +112,8 @@ all_player_stats.each do |player_stats|
   end
   end
   biggest_rebounds
-  binding.pry
 end
 
-big_shoe_rebounds
+
 
 
